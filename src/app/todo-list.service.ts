@@ -5,6 +5,7 @@ import { TodoItem } from './types/todo-item.class';
   providedIn: 'root'
 })
 export class TodoListService {
+  #id = 0;
   #list = signal<TodoItem[]>([]);
   activeList = computed(() => this.#list().filter(item => !item.completed()));
   completedList = computed(() => this.#list().filter(item => item.completed()));
@@ -18,7 +19,7 @@ export class TodoListService {
 
   addItem(description: string): void {
     // Note: The todo item is added at the top of the list.
-    this.#list.update(list => [new TodoItem(description), ...list]);
+    this.#list.update(list => [new TodoItem(this.#id++, description), ...list]);
   }
 
   removeItem(item: TodoItem): void {

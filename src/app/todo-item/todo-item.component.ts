@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, input, model } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TodoItem } from '../types/todo-item.class';
 import { TodoListService } from '../todo-list.service';
@@ -15,6 +15,7 @@ import { TodoListService } from '../todo-list.service';
 })
 export class TodoItemComponent {
   readonly todoItem = input.required<TodoItem>();
+  id = computed(() => `completion-checkbox-${this.todoItem().id}`);
 
   constructor(private _todoListService: TodoListService) { }
 

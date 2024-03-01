@@ -1,3 +1,3 @@
-<input type="checkbox" id="completion-checkbox" [(ngModel)]="todoItem().completed">
-<label for="completion-checkbox">{{ todoItem().description }}</label>
+<input type="checkbox" [id]="id()" [(ngModel)]="todoItem().completed">
+<label [for]="id()">{{ todoItem().description }}</label>
 <button type="button" (click)="destroy()">X</button>

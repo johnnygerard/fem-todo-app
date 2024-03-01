@@ -3,5 +3,8 @@ import { model } from "@angular/core";
 export class TodoItem {
   completed = model(false);
 
-  constructor(public readonly description: string) { }
+  constructor(
+    public readonly id: number,
+    public readonly description: string,
+  ) { }
 }
