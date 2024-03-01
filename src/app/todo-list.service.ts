@@ -1,7 +1,8 @@
-import { Injectable, computed, model, signal } from '@angular/core';
+import { Injectable, computed, effect, model, signal } from '@angular/core';
 import { TodoItem } from './types/todo-item.class';
 import { Filter } from './types/filter.enum';
 import { moveItemInArray } from '@angular/cdk/drag-drop';
+import { TodoItemJSON } from './types/todo-item-json.type';
 
 @Injectable({
   providedIn: 'root'
@@ -33,6 +34,27 @@ export class TodoListService {
 
   #list = signal<TodoItem[]>([]);
   #id = 0;
+
+  constructor() {
+    // Restore todo list from local storage.
+    const STORAGE_KEY = 'todoList';
+    const serializedList = localStorage.getItem(STORAGE_KEY);
+
+    if (serializedList) {
+      const deserializedList = JSON.parse(serializedList) as TodoItemJSON[];
+      this.#list.set(deserializedList.map(item => TodoItem.fromJSON(item)));
+    }
+
+    // Backup todo list to local storage.
+    effect(() => {
+      localStorage.setItem(
+        STORAGE_KEY,
+        JSON.stringify(
+          this.#list(),
+          (key, value) => key === 'completed' ? value() : value
+        ));
+    });
+  }
 
   addItem(description: string): void {
     // Note: The todo item is added at the top of the list.
