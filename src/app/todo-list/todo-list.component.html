@@ -1,1 +1,7 @@
 <app-todo-item *ngFor="let todoItem of list()" [todoItem]="todoItem" />
+<span>{{ activeItemsCount() }} item{{ activeItemsCount() === 1 ? '' : 's' }} left</span>
+<label *ngFor="let filterValue of filterValues">
+  <input type="radio" name="filter" [value]="filterValue" [(ngModel)]="filter">
+  <span>{{ filterValue }}</span>
+</label>
+<button type="button" (click)="clearCompleted()">Clear Completed</button>

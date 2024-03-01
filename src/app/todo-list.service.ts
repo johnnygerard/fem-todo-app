@@ -1,21 +1,37 @@
-import { Injectable, Signal, computed, signal } from '@angular/core';
+import { Injectable, computed, model, signal } from '@angular/core';
 import { TodoItem } from './types/todo-item.class';
+import { Filter } from './types/filter.enum';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TodoListService {
-  #id = 0;
-  #list = signal<TodoItem[]>([]);
-  activeList = computed(() => this.#list().filter(item => !item.completed()));
-  completedList = computed(() => this.#list().filter(item => item.completed()));
-  activeItemsCount = computed(() => this.#list().reduce(
+  filter = model(Filter.ALL);
+
+  activeItemsCount = computed(() => this.list().reduce(
     (count, item) => count + (item.completed() ? 0 : 1), 0)
   );
 
-  get list(): Signal<TodoItem[]> {
-    return this.#list.asReadonly();
-  }
+  list = computed(() => {
+    const filter = this.filter();
+    const list = this.#list();
+
+    switch (filter) {
+      case Filter.ALL:
+        return list;
+      case Filter.ACTIVE:
+        return list.filter(item => !item.completed());
+      case Filter.COMPLETED:
+        return list.filter(item => item.completed());
+      default: {
+        const _exhaustiveCheck: never = filter;
+        return _exhaustiveCheck;
+      }
+    }
+  });
+
+  #list = signal<TodoItem[]>([]);
+  #id = 0;
 
   addItem(description: string): void {
     // Note: The todo item is added at the top of the list.
