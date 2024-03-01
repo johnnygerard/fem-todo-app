@@ -1,9 +1,10 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, TrackByFunction } from '@angular/core';
 import { TodoItemComponent } from '../todo-item/todo-item.component';
 import { TodoListService } from '../todo-list.service';
 import { NgFor } from '@angular/common';
 import { Filter } from '../types/filter.enum';
 import { FormsModule } from '@angular/forms';
+import { TodoItem } from '../types/todo-item.class';
 
 @Component({
   selector: 'app-todo-list',
@@ -22,6 +23,7 @@ export class TodoListComponent {
   list = this._todoListService.list;
   filter = this._todoListService.filter;
   filterValues = Object.values(Filter);
+  trackById: TrackByFunction<TodoItem> = (_index, item) => item.id;
 
   constructor(private _todoListService: TodoListService) { }
 
