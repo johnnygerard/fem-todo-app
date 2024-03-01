@@ -1,6 +1,7 @@
 import { Injectable, computed, model, signal } from '@angular/core';
 import { TodoItem } from './types/todo-item.class';
 import { Filter } from './types/filter.enum';
+import { moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Injectable({
   providedIn: 'root'
@@ -45,6 +46,13 @@ export class TodoListService {
   clearCompletionStatus(): void {
     this.#list.update(list => {
       list.forEach(item => item.completed.set(false));
+      return [...list];
+    });
+  }
+
+  reorderItems(fromIndex: number, toIndex: number): void {
+    this.#list.update(list => {
+      moveItemInArray(list, fromIndex, toIndex);
       return [...list];
     });
   }

@@ -5,13 +5,15 @@ import { NgFor } from '@angular/common';
 import { Filter } from '../types/filter.enum';
 import { FormsModule } from '@angular/forms';
 import { TodoItem } from '../types/todo-item.class';
+import { CdkDragDrop, DragDropModule } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-todo-list',
   standalone: true,
   imports: [
-    NgFor,
+    DragDropModule,
     FormsModule,
+    NgFor,
     TodoItemComponent,
   ],
   templateUrl: './todo-list.component.html',
@@ -29,5 +31,9 @@ export class TodoListComponent {
 
   clearCompleted(): void {
     this._todoListService.clearCompletionStatus();
+  }
+
+  drop(event: CdkDragDrop<TodoItem[]>): void {
+    this._todoListService.reorderItems(event.previousIndex, event.currentIndex);
   }
 }
