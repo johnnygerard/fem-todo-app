@@ -3,16 +3,16 @@ import { FormsModule } from '@angular/forms';
 import { TodoListService } from '../todo-list.service';
 
 @Component({
-  selector: 'app-add-todo-item',
+  selector: 'app-todo-item-adder',
   standalone: true,
   imports: [
     FormsModule,
   ],
-  templateUrl: './add-todo-item.component.html',
-  styleUrl: './add-todo-item.component.scss',
+  templateUrl: './todo-item-adder.component.html',
+  styleUrl: './todo-item-adder.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AddTodoItemComponent {
+export class TodoItemAdderComponent {
   description = '';
 
   constructor(private _todoListService: TodoListService) { }
