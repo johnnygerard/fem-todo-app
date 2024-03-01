@@ -1,0 +1,9 @@
+<div cdkDropList (cdkDropListDropped)="drop($event)">
+  <app-todo-item cdkDrag *ngFor="let todoItem of list()" [todoItem]="todoItem" />
+</div>
+<span>{{ activeItemsCount() }} item{{ activeItemsCount() === 1 ? '' : 's' }} left</span>
+<label *ngFor="let filterValue of filterValues; trackBy: trackById">
+  <input type="radio" name="filter" [value]="filterValue" [(ngModel)]="filter">
+  <span>{{ filterValue }}</span>
+</label>
+<button type="button" (click)="clearCompleted()">Clear Completed</button>

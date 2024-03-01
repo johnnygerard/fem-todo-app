@@ -1,13 +1,16 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { TodoListComponent } from './todo-list/todo-list.component';
+import { TodoItemAdderComponent } from './todo-item-adder/todo-item-adder.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [
+    TodoListComponent,
+    TodoItemAdderComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
-  title = 'fem-todo-app';
-}
+export class AppComponent { }
