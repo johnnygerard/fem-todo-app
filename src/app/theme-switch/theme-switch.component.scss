@@ -1,3 +1,21 @@
+@use 'index' as *;
+
 :host {
   display: block;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+}
+
+.icon {
+  fill: white;
+
+  width: 20px;
+  height: 20px;
+
+  @include desktop {
+    width: 26px;
+    height: 26px;
+  }
 }

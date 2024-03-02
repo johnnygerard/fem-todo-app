@@ -1,3 +1,4 @@
+import { NgTemplateOutlet } from '@angular/common';
 import { ChangeDetectionStrategy, Component, ModelSignal, effect, model } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
@@ -6,6 +7,7 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [
     FormsModule,
+    NgTemplateOutlet,
   ],
   templateUrl: './theme-switch.component.html',
   styleUrl: './theme-switch.component.scss',
