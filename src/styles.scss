@@ -2,13 +2,24 @@
 @use 'index' as *;
 
 body {
-  // Light theme
+  font-family: 'Josefin Sans', sans-serif;
+  background-color: var(--canvas-color);
+
+  // Custom properties *********************************************
   --canvas-color: #FAFAFA;
+  @include theme-background-image('light', 'mobile');
 
   &.dark-theme {
     --canvas-color: #171823;
+    @include theme-background-image('dark', 'mobile');
   }
 
-  font-family: 'Josefin Sans', sans-serif;
-  background-color: var(--canvas-color);
+
+  @include desktop {
+    @include theme-background-image('light', 'desktop');
+
+    &.dark-theme {
+      @include theme-background-image('dark', 'desktop');
+    }
+  }
 }
