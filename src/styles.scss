@@ -2,5 +2,13 @@
 @use 'index' as *;
 
 body {
+  // Light theme
+  --canvas-color: #FAFAFA;
+
+  &.dark-theme {
+    --canvas-color: #171823;
+  }
+
   font-family: 'Josefin Sans', sans-serif;
+  background-color: var(--canvas-color);
 }
