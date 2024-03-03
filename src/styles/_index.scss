@@ -13,5 +13,5 @@
 $CDN_ENDPOINT: 'https://ik.imagekit.io/jgerard/fem-todo-app';
 
 @mixin theme-background-image($theme, $device) {
-  --theme-background-image: url('#{$CDN_ENDPOINT}/#{$theme}-theme-background-#{$device}.png');
+  --theme-background-image: url('#{$CDN_ENDPOINT}/#{$device}-background-#{$theme}-theme.png');
 }
