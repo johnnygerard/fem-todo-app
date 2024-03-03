@@ -7,3 +7,17 @@
   align-items: center;
   min-height: 100vh;
 }
+
+.theme-background-image {
+  background: var(--theme-background-image) center / cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  z-index: -1;
+
+  @include desktop {
+    height: 300px;
+  }
+}
