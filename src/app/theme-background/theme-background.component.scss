@@ -1,0 +1,19 @@
+@use "index" as *;
+
+:host {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  z-index: -1;
+
+  @include desktop {
+    height: 300px;
+  }
+}
+
+img {
+  object-fit: cover;
+}
