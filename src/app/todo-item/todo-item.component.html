@@ -2,7 +2,7 @@
   <input class="g-checkbox" type="checkbox" [id]="id()" [(ngModel)]="todoItem().completed">
   <svg-checkmark [checked]="todoItem().completed()" />
 </label>
-<label class="description" [class.checked]="todoItem().completed()"
+<label class="description g-todo-text" [class.checked]="todoItem().completed()"
     [for]="id()">{{ todoItem().description }}</label>
 <button class="delete-button" type="button" (click)="destroy()">
   <svg-cross />

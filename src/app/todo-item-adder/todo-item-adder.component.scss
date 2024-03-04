@@ -28,19 +28,10 @@
   width: 100%;
   height: 48px;
   padding-left: 52px;
-
-  // Typography
-  color: #393a4b;
-  font-size: 12px;
-  letter-spacing: -0.167px;
   caret-color: #3A7CFD;
 
   @include desktop {
     height: 64px;
     padding-left: 72px;
-
-    // Typography
-    font-size: 18px;
-    letter-spacing: -0.25px;
   }
 }

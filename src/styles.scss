@@ -7,12 +7,16 @@ body {
   --cross-svg-fill: #494c6b;
   --surface-background-color: #fff;
   --surface-box-shadow-color: #c2c3d680;
+  --todo-text-color: #494c6b;
+  --todo-text-color-checked: #d1d2da;
 
   &.dark-theme {
     --canvas-color: #171823;
     --cross-svg-fill: #5b5e7e;
     --surface-background-color: #25273d;
     --surface-box-shadow-color: #00000080;
+    --todo-text-color: #c8cbe7;
+    --todo-text-color-checked: #4d5067;
   }
 
   font-family: "Josefin Sans", sans-serif;
@@ -48,5 +52,16 @@ body {
 
   &-container {
     position: relative;
+  }
+}
+
+.g-todo-text {
+  color: var(--todo-text-color);
+  font-size: 12px;
+  letter-spacing: -0.167px;
+
+  @include desktop {
+    font-size: 18px;
+    letter-spacing: -0.25px;
   }
 }

@@ -23,6 +23,7 @@
 
   &.checked {
     text-decoration: line-through;
+    color: var(--todo-text-color-checked);
   }
 }
 
