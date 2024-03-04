@@ -27,5 +27,5 @@ import { ChangeDetectionStrategy, Component, booleanAttribute, input } from '@an
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CheckmarkComponent {
-  checked = input.required({ transform: booleanAttribute });
+  checked = input(false, { transform: booleanAttribute });
 }
