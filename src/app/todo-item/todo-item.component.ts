@@ -2,12 +2,16 @@ import { ChangeDetectionStrategy, Component, computed, input } from '@angular/co
 import { FormsModule } from '@angular/forms';
 import { TodoItem } from '../types/todo-item.class';
 import { TodoListService } from '../todo-list.service';
+import { CrossComponent } from '../svg/cross/cross.component';
+import { CheckmarkComponent } from '../svg/checkmark/checkmark.component';
 
 @Component({
   selector: 'app-todo-item',
   standalone: true,
   imports: [
     FormsModule,
+    CrossComponent,
+    CheckmarkComponent,
   ],
   templateUrl: './todo-item.component.html',
   styleUrl: './todo-item.component.scss',

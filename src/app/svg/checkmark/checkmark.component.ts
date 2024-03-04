@@ -19,7 +19,7 @@ import { ChangeDetectionStrategy, Component, booleanAttribute, input } from '@an
   </ng-container>
 
   <ng-template #unchecked>
-    <circle cx="12" cy="12" r="11.5" fill="white" stroke="#E3E4F1"/>
+    <circle cx="12" cy="12" r="11.5" fill="none" stroke="#E3E4F1"/>
   </ng-template>
 </svg>
   `,

@@ -1,14 +1,52 @@
-@use 'reset';
-@use 'index' as *;
+@use "reset";
+@use "index" as *;
 
 body {
-  font-family: 'Josefin Sans', sans-serif;
-  background-color: var(--canvas-color);
-
   // Custom properties *********************************************
-  --canvas-color: #FAFAFA;
+  --canvas-color: #fafafa;
+  --cross-svg-fill: #494c6b;
+  --surface-background-color: #fff;
+  --surface-box-shadow-color: #c2c3d680;
 
   &.dark-theme {
     --canvas-color: #171823;
+    --cross-svg-fill: #5b5e7e;
+    --surface-background-color: #25273d;
+    --surface-box-shadow-color: #00000080;
+  }
+
+  font-family: "Josefin Sans", sans-serif;
+  background-color: var(--canvas-color);
+
+  // Center content horizontally
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+
+  padding: 48px 24px 72px;
+
+  @include desktop {
+    padding: 70px 0 52px;
+  }
+}
+
+.g-surface {
+  border-radius: 5px;
+  background: var(--surface-background-color);
+  box-shadow: 0px 35px 50px -15px var(--surface-box-shadow-color);
+}
+
+.g-checkbox {
+  appearance: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 50%;
+  cursor: pointer;
+
+  &-container {
+    position: relative;
   }
 }

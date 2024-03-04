@@ -1,3 +1,42 @@
+@use "index" as *;
+
 :host {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e3e4f1;
+  height: 53px;
+  padding: 0 20px;
+
+  @include desktop {
+    height: 65px;
+    padding: 0 24px;
+  }
+}
+
+.description {
+  cursor: pointer;
+  margin-left: 12px;
+
+  @include desktop {
+    margin-left: 24px;
+  }
+
+  &.checked {
+    text-decoration: line-through;
+  }
+}
+
+// Delete button ****************************************************
+
+:host:focus-within .delete-button,
+:host:hover .delete-button {
   display: block;
+}
+
+.delete-button {
+  margin-left: auto;
+
+  @include desktop {
+    display: none;
+  }
 }
