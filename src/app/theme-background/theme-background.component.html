@@ -1,10 +1,19 @@
-<img *ngIf="!isDarkTheme() && !isMobile" ngSrc="desktop-background-light-theme.png"
-    ngSrcset="604w, 784w, 1024w, 1328w, 1728w, 2250w" sizes="100vw" fill priority alt>
-<img *ngIf="isDarkTheme() && !isMobile" ngSrc="desktop-background-dark-theme.png"
-    ngSrcset="604w, 832w, 1142w" sizes="100vw" fill priority alt>
+<ng-container *ngIf="isMobile; else desktop">
+  <img *ngIf="isDarkTheme(); else light" ngSrc="mobile-background-dark-theme.png"
+      ngSrcset="256w, 328w, 424w, 552w, 712w, 924w" sizes="100vw" fill priority alt>
 
-<!-- Mobile -->
-<img *ngIf="!isDarkTheme() && isMobile" ngSrc="mobile-background-light-theme.png"
-ngSrcset="256w, 336w, 448w, 586w" sizes="100vw" fill priority alt>
-<img *ngIf="isDarkTheme() && isMobile" ngSrc="mobile-background-dark-theme.png"
-    ngSrcset="256w, 328w, 424w, 552w, 712w, 924w" sizes="100vw" fill priority alt>
+  <ng-template #light>
+    <img ngSrc="mobile-background-light-theme.png" ngSrcset="256w, 336w, 448w, 586w" sizes="100vw"
+        fill priority alt>
+  </ng-template>
+</ng-container>
+
+<ng-template #desktop>
+  <img *ngIf="isDarkTheme(); else light" ngSrc="desktop-background-dark-theme.png"
+      ngSrcset="604w, 832w, 1142w" sizes="100vw" fill priority alt>
+
+  <ng-template #light>
+    <img ngSrc="desktop-background-light-theme.png"
+        ngSrcset="604w, 784w, 1024w, 1328w, 1728w, 2250w" sizes="100vw" fill priority alt>
+  </ng-template>
+</ng-template>
