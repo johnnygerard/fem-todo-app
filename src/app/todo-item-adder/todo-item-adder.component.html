@@ -1,5 +1,6 @@
-<form #form="ngForm" (ngSubmit)="onSubmit(); form.resetForm()">
-  <input name="description" [(ngModel)]="description" autocomplete="off" required
+<form class="input-container" #form="ngForm" (ngSubmit)="onSubmit(); form.resetForm()">
+  <div class="circle"></div>
+  <input class="input" name="description" [(ngModel)]="description" autocomplete="off" required
       placeholder="Create a new todo…">
   <button hidden [disabled]="form.invalid">Submit</button>
 </form>
