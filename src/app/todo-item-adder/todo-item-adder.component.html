@@ -1,6 +1,6 @@
 <form class="input-container" #form="ngForm" (ngSubmit)="onSubmit(); form.resetForm()">
   <svg-checkmark class="checkmark" />
   <input class="input g-surface g-todo-text" name="description" [(ngModel)]="description" autocomplete="off" required
-      placeholder="Create a new todo…">
+      placeholder="Create a new todo…" maxlength="60">
   <button hidden [disabled]="form.invalid">Submit</button>
 </form>
