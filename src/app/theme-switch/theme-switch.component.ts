@@ -1,5 +1,5 @@
 import { NgTemplateOutlet } from '@angular/common';
-import { ChangeDetectionStrategy, Component, ModelSignal, effect, model } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ThemeService } from '../theme.service';
 
@@ -16,6 +16,7 @@ import { ThemeService } from '../theme.service';
 })
 export class ThemeSwitchComponent {
   isDarkTheme = this._themeService.isDarkTheme;
+  title = computed(() => `Use ${this.isDarkTheme() ? 'Light' : 'Dark'} Theme`);
 
   constructor(private _themeService: ThemeService) { }
 }
