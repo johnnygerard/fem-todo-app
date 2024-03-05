@@ -26,3 +26,21 @@ app-todo-list {
     margin-top: 24px;
   }
 }
+
+app-filter {
+  margin-top: 16px;
+}
+
+footer {
+  margin-top: 40px;
+
+  @include desktop {
+    margin-top: 48px;
+  }
+
+  // Typography
+  color: var(--footer-text-color);
+  font-size: 14px;
+  letter-spacing: -0.194px;
+  text-align: center;
+}

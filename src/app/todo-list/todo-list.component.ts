@@ -1,11 +1,11 @@
-import { ChangeDetectionStrategy, Component, TrackByFunction } from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostListener, booleanAttribute, input } from '@angular/core';
 import { TodoItemComponent } from '../todo-item/todo-item.component';
 import { TodoListService } from '../todo-list.service';
-import { NgFor } from '@angular/common';
-import { Filter } from '../types/filter.enum';
+import { NgFor, NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TodoItem } from '../types/todo-item.class';
 import { CdkDragDrop, DragDropModule } from '@angular/cdk/drag-drop';
+import { FilterComponent } from '../filter/filter.component';
 
 @Component({
   selector: 'app-todo-list',
@@ -14,7 +14,9 @@ import { CdkDragDrop, DragDropModule } from '@angular/cdk/drag-drop';
     DragDropModule,
     FormsModule,
     NgFor,
+    NgIf,
     TodoItemComponent,
+    FilterComponent,
   ],
   templateUrl: './todo-list.component.html',
   styleUrl: './todo-list.component.scss',
@@ -22,10 +24,8 @@ import { CdkDragDrop, DragDropModule } from '@angular/cdk/drag-drop';
 })
 export class TodoListComponent {
   readonly activeItemsCount = this._todoListService.activeItemsCount;
+  isMobile = input.required({ transform: booleanAttribute });
   list = this._todoListService.list;
-  filter = this._todoListService.filter;
-  filterValues = Object.values(Filter);
-  trackById: TrackByFunction<TodoItem> = (_index, item) => item.id;
 
   constructor(private _todoListService: TodoListService) { }
 

@@ -1,4 +1,5 @@
 @use "index" as *;
+@use "sass:map";
 
 :host {
   display: block;
@@ -28,7 +29,7 @@
   width: 100%;
   height: 48px;
   padding-left: 52px;
-  caret-color: #3A7CFD;
+  caret-color: map.get($palette, "accent");
 
   @include desktop {
     height: 64px;

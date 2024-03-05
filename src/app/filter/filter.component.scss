@@ -1,0 +1,42 @@
+@use "index" as *;
+@use "sass:map";
+
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  @include mobile {
+    height: 48px;
+  }
+}
+
+.filter {
+  position: relative;
+
+  // Typography
+  color: var(--footer-text-color);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.194px;
+  text-transform: capitalize;
+
+  &:is(:hover, :focus-visible):not(.checked) {
+    color: var(--text-hover-color);
+  }
+
+  &.checked {
+    color: map.get($palette, "accent");
+  }
+
+  &-input {
+    appearance: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+  }
+}

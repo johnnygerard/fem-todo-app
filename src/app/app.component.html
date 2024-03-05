@@ -5,6 +5,7 @@
 </header>
 <main>
   <app-todo-item-adder />
-  <app-todo-list class="g-surface" />
+  <app-todo-list class="g-surface" [isMobile]="isMobile" />
+  <app-filter class="g-surface" *ngIf="isMobile" />
 </main>
 <footer>Drag and drop to reorder list</footer>
