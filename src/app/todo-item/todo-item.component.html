@@ -1,6 +1,8 @@
-<label class="g-checkbox-container">
-  <input class="g-checkbox" type="checkbox" [id]="id()" [(ngModel)]="todoItem().completed">
-  <svg-checkmark [checked]="todoItem().completed()" />
+<label class="g-checkbox-container" (mouseenter)="isHighlighted = true"
+    (mouseleave)="isHighlighted = false">
+  <input class="g-checkbox" type="checkbox" [id]="id()" [(ngModel)]="todoItem().completed"
+      (focus)="isHighlighted = true" (blur)="isHighlighted = false">
+  <svg-checkmark [isChecked]="todoItem().completed()" [isHighlighted]="isHighlighted" />
 </label>
 <label class="description g-todo-text" [class.checked]="todoItem().completed()"
     [for]="id()">{{ todoItem().description }}</label>
