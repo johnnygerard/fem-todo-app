@@ -24,13 +24,15 @@ This is my solution to the [Todo app challenge](https://www.frontendmentor.io/ch
  - Images served from [ImageKit](https://imagekit.io/) CDN
  <!-- - [Solution]() -->
 
-<!-- ## Screenshots
-### Mobile
-![mobile screenshot](screenshots/mobile.avif)
-### Tablet
-![tablet screenshot](screenshots/tablet.avif)
-### Desktop
-![desktop screenshot](screenshots/desktop.avif) -->
+## Screenshots
+### Mobile Light Theme
+![mobile light theme screenshot](screenshots/mobile-light-theme.avif)
+### Mobile Dark Theme
+![mobile dark theme screenshot](screenshots/mobile-dark-theme.avif)
+### Desktop Light Theme
+![desktop light theme screenshot](screenshots/desktop-light-theme.avif)
+### Desktop Dark Theme
+![desktop dark theme screenshot](screenshots/desktop-dark-theme.avif)
 
 ## About Frontend Mentor
 [Frontend Mentor](https://www.frontendmentor.io/) challenges help you improve your coding skills by building realistic projects.
