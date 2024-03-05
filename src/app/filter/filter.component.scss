@@ -17,6 +17,7 @@
 
   // Typography
   color: var(--footer-text-color);
+  transition: $color-transition;
   font-size: 14px;
   font-weight: 700;
   letter-spacing: -0.194px;
