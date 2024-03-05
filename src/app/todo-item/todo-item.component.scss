@@ -28,14 +28,14 @@
 
 :host:focus-within .delete-button,
 :host:hover .delete-button {
-  display: block;
+  z-index: 1;
 }
 
 .delete-button {
   margin-left: auto;
 
   @include desktop {
-    display: none;
+    z-index: -1;
   }
 }
 
