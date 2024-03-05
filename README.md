@@ -1,7 +1,7 @@
 # Frontend Mentor | Todo app
 This is my solution to the [Todo app challenge](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW) from [Frontend Mentor](https://www.frontendmentor.io/).
 
-[![project status](https://img.shields.io/badge/status-work%20in%20progress-red?style=for-the-badge)](https://fem-todo-app-jgerard.vercel.app)
+[![project status](https://img.shields.io/badge/status-solution%20published-success?style=for-the-badge)](https://fem-todo-app-jgerard.vercel.app)
 
  ## Tech Stack
 - Angular 17
