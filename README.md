@@ -8,6 +8,10 @@ This is my solution to the [Todo app challenge](https://www.frontendmentor.io/ch
 - Sass
 
 ## Main Features
+- Angular signals
+- [Angular Material CDK Drag and Drop](https://material.angular.io/cdk/drag-drop/overview)
+- [ImageKit](https://imagekit.io/) CDN
+- [NgOptimizedImage](https://angular.io/guide/image-directive) with placeholder
 - Standalone components
 - Bash automation (see [PR #1](../../pull/1))
 - [GitHub Actions](../../tree/main/.github/workflows):
@@ -20,9 +24,8 @@ This is my solution to the [Todo app challenge](https://www.frontendmentor.io/ch
 - GitHub Copilot
 
 ## Links
- - [Website](https://fem-todo-app-jgerard.vercel.app) hosted with [Vercel](https://vercel.com/)
- - Images served from [ImageKit](https://imagekit.io/) CDN
- <!-- - [Solution]() -->
+- [Website](https://fem-todo-app-jgerard.vercel.app) hosted with [Vercel](https://vercel.com/)
+<!-- - [Solution]() -->
 
 ## Screenshots
 ### Mobile Light Theme
