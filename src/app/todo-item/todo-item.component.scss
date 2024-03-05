@@ -15,10 +15,10 @@
 
 .description {
   cursor: pointer;
-  margin-left: 12px;
+  padding: 0 12px;
 
   @include desktop {
-    margin-left: 24px;
+    padding: 0 24px;
   }
 
   &.checked {
