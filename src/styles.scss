@@ -1,2 +1,73 @@
-@use 'reset';
-@use 'index' as *;
+@use "reset";
+@use "index" as *;
+
+body {
+  // Custom properties *********************************************
+  --canvas-color: #fafafa;
+  --cross-svg-fill: #494c6b;
+  --surface-background-color: #fff;
+  --surface-box-shadow-color: #c2c3d680;
+  --todo-border-color: #E3E4F1;
+  --todo-text-color: #494c6b;
+  --todo-text-color-checked: #d1d2da;
+  --text-hover-color: #494c6b;
+  --footer-text-color: #9495a5;
+
+  &.dark-theme {
+    --canvas-color: #171823;
+    --cross-svg-fill: #5b5e7e;
+    --surface-background-color: #25273d;
+    --surface-box-shadow-color: #00000080;
+    --todo-border-color: #393A4B;
+    --todo-text-color: #c8cbe7;
+    --todo-text-color-checked: #4d5067;
+    --text-hover-color: #e3e4f1;
+    --footer-text-color: #5b5e7e;
+  }
+
+  font-family: "Josefin Sans", sans-serif;
+  background-color: var(--canvas-color);
+
+  // Center content horizontally
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+
+  padding: 48px 24px 72px;
+
+  @include desktop {
+    padding: 70px 0 52px;
+  }
+}
+
+.g-surface {
+  border-radius: 5px;
+  background: var(--surface-background-color);
+  box-shadow: 0px 35px 50px -15px var(--surface-box-shadow-color);
+}
+
+.g-checkbox {
+  appearance: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 50%;
+  cursor: pointer;
+
+  &-container {
+    position: relative;
+  }
+}
+
+.g-todo-text {
+  color: var(--todo-text-color);
+  font-size: 12px;
+  letter-spacing: -0.167px;
+
+  @include desktop {
+    font-size: 18px;
+    letter-spacing: -0.25px;
+  }
+}

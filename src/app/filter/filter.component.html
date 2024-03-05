@@ -1,0 +1,5 @@
+<label class="filter" [class.checked]="filterValue === filter()"
+    *ngFor="let filterValue of filterValues; trackBy: trackById">
+  <input class="filter-input" type="radio" name="filter" [value]="filterValue" [(ngModel)]="filter">
+  <span>{{ filterValue }}</span>
+</label>

@@ -1,3 +1,44 @@
+@use "index" as *;
+@use "sass:map";
+
 :host {
   display: block;
+}
+
+// Start order-sensitive section
+.todo-list {
+  cursor: grab;
+}
+
+.cdk-drop-list-dragging {
+  cursor: grabbing;
+}
+// End order-sensitive section
+
+footer {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+
+  @include desktop {
+    padding: 0 24px;
+  }
+}
+
+.counter,
+.clear-button {
+  color: var(--footer-text-color);
+  font-size: 12px;
+  letter-spacing: -0.167px;
+
+  @include desktop {
+    font-size: 14px;
+    letter-spacing: -0.194px;
+  }
+}
+
+.clear-button:is(:hover, :focus-visible) {
+  color: var(--text-hover-color);
 }
