@@ -1,7 +1,7 @@
 # Frontend Mentor | Todo app
 This is my solution to the [Todo app challenge](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW) from [Frontend Mentor](https://www.frontendmentor.io/).
 
-[![project status](https://img.shields.io/badge/status-solution%20published-success?style=for-the-badge)](https://fem-todo-app-jgerard.vercel.app)
+[![project status](https://img.shields.io/badge/status-solution%20published-success?style=for-the-badge)](https://www.frontendmentor.io/solutions/todo-app-with-drag-and-drop-uivwkxqkHD)
 
  ## Tech Stack
 - Angular 17
@@ -25,7 +25,7 @@ This is my solution to the [Todo app challenge](https://www.frontendmentor.io/ch
 
 ## Links
 - [Website](https://fem-todo-app-jgerard.vercel.app) hosted with [Vercel](https://vercel.com/)
-<!-- - [Solution]() -->
+- [Solution](https://www.frontendmentor.io/solutions/todo-app-with-drag-and-drop-uivwkxqkHD)
 
 ## Screenshots
 ### Mobile Light Theme
