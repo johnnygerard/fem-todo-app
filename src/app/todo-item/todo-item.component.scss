@@ -6,20 +6,17 @@
   border-bottom: 1px solid var(--todo-border-color);
   height: 53px;
   padding: 0 20px;
+  gap: 12px;
 
   @include desktop {
     height: 65px;
     padding: 0 24px;
+    gap: 24px;
   }
 }
 
 .description {
   cursor: pointer;
-  padding: 0 12px;
-
-  @include desktop {
-    padding: 0 24px;
-  }
 
   &.checked {
     text-decoration: line-through;
