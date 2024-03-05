@@ -11,7 +11,7 @@ export class TodoListService {
   filter = model(Filter.ALL);
 
   activeItemsCount = computed(() => this.list().reduce(
-    (count, item) => count + (item.completed() ? 0 : 1), 0)
+    (count, item) => count + (item.isCompleted() ? 0 : 1), 0)
   );
 
   list = computed(() => {
@@ -22,18 +22,24 @@ export class TodoListService {
       case Filter.ALL:
         return list;
       case Filter.ACTIVE:
-        return list.filter(item => !item.completed());
+        return list.filter(item => !item.isCompleted());
       case Filter.COMPLETED:
-        return list.filter(item => item.completed());
+        return list.filter(item => item.isCompleted());
       default: {
         const _exhaustiveCheck: never = filter;
         return _exhaustiveCheck;
       }
     }
   });
-
-  #list = signal<TodoItem[]>([]);
   #id = 0;
+  #list = signal<TodoItem[]>([
+    new TodoItem(this.#id++, 'Complete online JavaScript course', { isCompleted: true }),
+    new TodoItem(this.#id++, 'Jog around the park 3x'),
+    new TodoItem(this.#id++, '10 minutes meditation'),
+    new TodoItem(this.#id++, 'Read for 1 hour'),
+    new TodoItem(this.#id++, 'Pick up groceries'),
+    new TodoItem(this.#id++, 'Complete Todo App on Frontend Mentor'),
+  ]);
 
   constructor() {
     // Restore todo list from local storage.
@@ -75,7 +81,7 @@ export class TodoListService {
 
   clearCompletionStatus(): void {
     this.#list.update(list => {
-      list.forEach(item => item.completed.set(false));
+      list.forEach(item => item.isCompleted.set(false));
       return [...list];
     });
   }
