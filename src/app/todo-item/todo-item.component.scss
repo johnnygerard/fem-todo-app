@@ -4,22 +4,19 @@
   display: flex;
   align-items: center;
   border-bottom: 1px solid var(--todo-border-color);
-  height: 53px;
-  padding: 0 20px;
+  min-height: 53px;
+  padding: 16px 20px;
+  gap: 12px;
 
   @include desktop {
-    height: 65px;
-    padding: 0 24px;
+    min-height: 65px;
+    padding: 20px 24px;
+    gap: 24px;
   }
 }
 
 .description {
   cursor: pointer;
-  padding: 0 12px;
-
-  @include desktop {
-    padding: 0 24px;
-  }
 
   &.checked {
     text-decoration: line-through;
@@ -31,13 +28,18 @@
 
 :host:focus-within .delete-button,
 :host:hover .delete-button {
-  display: block;
+  z-index: 1;
 }
 
 .delete-button {
   margin-left: auto;
 
   @include desktop {
-    display: none;
+    z-index: -1;
   }
+}
+
+.checkbox-label,
+.delete-button {
+  min-width: fit-content;
 }

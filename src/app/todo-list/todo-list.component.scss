@@ -30,6 +30,7 @@ footer {
 .counter,
 .clear-button {
   color: var(--footer-text-color);
+  transition: $color-transition;
   font-size: 12px;
   letter-spacing: -0.167px;
 

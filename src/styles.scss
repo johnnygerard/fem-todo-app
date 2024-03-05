@@ -7,7 +7,7 @@ body {
   --cross-svg-fill: #494c6b;
   --surface-background-color: #fff;
   --surface-box-shadow-color: #c2c3d680;
-  --todo-border-color: #E3E4F1;
+  --todo-border-color: #e3e4f1;
   --todo-text-color: #494c6b;
   --todo-text-color-checked: #d1d2da;
   --text-hover-color: #494c6b;
@@ -18,7 +18,7 @@ body {
     --cross-svg-fill: #5b5e7e;
     --surface-background-color: #25273d;
     --surface-box-shadow-color: #00000080;
-    --todo-border-color: #393A4B;
+    --todo-border-color: #393a4b;
     --todo-text-color: #c8cbe7;
     --todo-text-color-checked: #4d5067;
     --text-hover-color: #e3e4f1;
@@ -31,7 +31,9 @@ body {
   // Center content horizontally
   display: flex;
   justify-content: center;
-  min-height: 100vh;
+
+  min-width: 280px;
+  position: relative; // For theme background image
 
   padding: 48px 24px 72px;
 

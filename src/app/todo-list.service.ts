@@ -37,22 +37,30 @@ export class TodoListService {
 
   constructor() {
     // Restore todo list from local storage.
-    const STORAGE_KEY = 'todoList';
-    const serializedList = localStorage.getItem(STORAGE_KEY);
+    const KEYS = {
+      TODO_LIST: 'todoList',
+      ID: 'id',
+    } as const;
+    const serializedList = localStorage.getItem(KEYS.TODO_LIST);
+    const serializedId = localStorage.getItem(KEYS.ID);
 
     if (serializedList) {
       const deserializedList = JSON.parse(serializedList) as TodoItemJSON[];
       this.#list.set(deserializedList.map(item => TodoItem.fromJSON(item)));
     }
 
+    if (serializedId) this.#id = parseInt(serializedId);
+
     // Backup todo list to local storage.
     effect(() => {
       localStorage.setItem(
-        STORAGE_KEY,
+        KEYS.TODO_LIST,
         JSON.stringify(
           this.#list(),
           (key, value) => key === 'completed' ? value() : value
         ));
+
+      localStorage.setItem(KEYS.ID, this.#id.toString());
     });
   }
 

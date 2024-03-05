@@ -20,6 +20,7 @@ import { CheckmarkComponent } from '../svg/checkmark/checkmark.component';
 export class TodoItemComponent {
   readonly todoItem = input.required<TodoItem>();
   id = computed(() => `completion-checkbox-${this.todoItem().id}`);
+  isHighlighted = false;
 
   constructor(private _todoListService: TodoListService) { }
 
