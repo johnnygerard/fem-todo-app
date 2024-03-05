@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, HostListener, booleanAttribute, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, booleanAttribute, input } from '@angular/core';
 import { TodoItemComponent } from '../todo-item/todo-item.component';
 import { TodoListService } from '../todo-list.service';
 import { NgFor, NgIf } from '@angular/common';
