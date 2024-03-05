@@ -6,6 +6,6 @@
 </label>
 <label class="description g-todo-text" [class.checked]="todoItem().completed()"
     [for]="id()">{{ todoItem().description }}</label>
-<button class="delete-button" type="button" (click)="destroy()">
+<button class="delete-button" type="button" (click)="destroy()" aria-label="Delete todo">
   <svg-cross />
 </button>

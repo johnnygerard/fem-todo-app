@@ -1,10 +1,10 @@
 <div class="todo-list" cdkDropList (cdkDropListDropped)="drop($event)">
   <app-todo-item cdkDrag *ngFor="let todoItem of list()" [todoItem]="todoItem" />
 </div>
-<footer>
+<div class="footer">
   <span class="counter">
     {{ activeItemsCount() }} item{{ activeItemsCount() === 1 ? '' : 's' }} left
   </span>
   <app-filter *ngIf="!isMobile()" />
   <button class="clear-button" type="button" (click)="clearCompleted()">Clear Completed</button>
-</footer>
+</div>
