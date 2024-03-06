@@ -15,7 +15,7 @@ import { ThemeService } from '../theme.service';
 })
 export class ThemeBackgroundComponent {
   readonly BREAKPOINT = 604;
-  readonly isDarkTheme = this._themeService.isDarkTheme.asReadonly;
+  readonly isDarkTheme = this._themeService.isDarkTheme;
   isMobile = window.innerWidth < this.BREAKPOINT;
 
   constructor(private _themeService: ThemeService) { }
