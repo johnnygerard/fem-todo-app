@@ -13,6 +13,7 @@ import { ThemeService } from '../../theme.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CheckmarkComponent {
+  readonly GRADIENT = 'url(#svg-checkmark-gradient)'; // Gradient definition in index.html
   isChecked = input(false, { transform: booleanAttribute });
   isHighlighted = input(false, { transform: booleanAttribute });
   circleStroke = computed(() => this._themeService.isDarkTheme() ? '#393A4B' : '#E3E4F1');
