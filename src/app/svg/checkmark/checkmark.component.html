@@ -1,12 +1,11 @@
 <svg viewBox="0 0 24 24" fill="none">
   <g *ngIf="isChecked(); else unchecked">
-    <circle cx="12" cy="12" r="12" fill="url(#svg-checkmark-gradient)" />
-    <!-- Gradient definition in index.html -->
+    <circle cx="12" cy="12" r="12" [attr.fill]="GRADIENT" />
     <path d="M8 12.3041L10.6959 15L16.6959 9" stroke="white" />
   </g>
 
   <ng-template #unchecked>
     <circle cx="12" cy="12" r="11.5" fill="none"
-        [attr.stroke]="isHighlighted() ? 'url(#svg-checkmark-gradient)' : circleStroke()" />
+        [attr.stroke]="isHighlighted() ? GRADIENT : circleStroke()" />
   </ng-template>
 </svg>
